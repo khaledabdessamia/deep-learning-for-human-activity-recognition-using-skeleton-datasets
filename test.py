@@ -15,7 +15,7 @@ def load_data_skeleton():
     coming = np.genfromtxt("./skeleton/Coming.csv", delimiter=',')
     going = np.genfromtxt("./skeleton/Going.csv", delimiter=',')
 
-    TestFile = np.genfromtxt("./skeleton/Filles_dataset.csv", delimiter=',')
+    TestFile = np.genfromtxt("./skeleton/Test1.csv", delimiter=',')
 
     print('hello = ', hello.shape)
     print('call = ', call.shape)
