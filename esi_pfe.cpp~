@@ -6,7 +6,7 @@
 using namespace std;
 #define PI 3.14159265
 
-#define taille 4
+#define taille 10
 int main(int argc, char** argv){
 	
 	ros::init(argc, argv, "my_tf_listener");
@@ -94,9 +94,8 @@ int main(int argc, char** argv){
     double x_diff;
     double y_diff;
     double z_diff;
- int loop =0;
-	while (node.ok() && loop < 20){
-		loop++;
+
+	while (node.ok()){
 		tf::StampedTransform tf_right_hand;
 		tf::StampedTransform tf_left_hand;
                 tf::StampedTransform tf_neck;
@@ -416,7 +415,6 @@ int main(int argc, char** argv){
 			ROS_ERROR("%s",ex.what());
 		}
 		rate.sleep();
-		cout << "iteration:   "<< loop<<endl; 
 	}
 	
 
@@ -506,12 +504,6 @@ if(strcmp(argv[1],"Going")==0)
 if(strcmp(argv[1],"Pointing")==0) 
    { x_file.open ("Pointing.csv", ios::app); //the flag ios::app makes sure that the control starts at the end of already existing file.
 		x_file << 6;
-		x_file << ",";
-	}
-
-if(strcmp(argv[1],"Test")==0) 
-   { x_file.open ("Test.csv", ios::app); //the flag ios::app makes sure that the control starts at the end of already existing file.
-		x_file << 0;
 		x_file << ",";
 	}
 
